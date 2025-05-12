@@ -1,0 +1,153 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <omnistudio-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </omnistudio-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <omnistudio-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></omnistudio-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <omnistudio-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12"  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-bottom_x-small" style="">
+          <div data-style-id="state0element0" class="slds-col   slds-p-around_x-small  slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-small-size_12-of-12 slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}' >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="Scorecard"  collapsible="false"  collapsed-by-default="false"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_12-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-heading_medium%20slds-text-color_default%22%3EPartnership%20Score%20Details:%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1" class="slds-col   slds-p-around_x-small  slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-small-size_12-of-12 slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}' >
+    <omnistudio-block data-style-id="state0element0block_element1_child"  card={card}  record={record}  label="Scorecard"  collapsible="false"  collapsed-by-default="false"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element0" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3ECurrent%20Year%20Target:%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element1" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_4-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element1_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BCurrentYrTarget%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element2" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element2_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3EYTD%20Revenue%20Generated:%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element3" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_3-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element3_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BRevGenerated%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element4" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element4_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3EOpen%20Opportunities:%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element5" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_4-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element5_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BOpenOpps%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element6" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element6_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3EValue%20of%20Open%20Opps:%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element7" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_3-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element7_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BOpenOppValue%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element8" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element8_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3EOpp%20Win%20Rate%20(%25):%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element9" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_4-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element9_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BOppWinRate%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element10" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element10_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3E%25%20Goal%20Attainment%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element11" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_3-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element11_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BGoalAttainment%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element12" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element12_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3EClosed%20Won%20Opportunities:%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element13" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_4-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element13_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BClosedWonOpps%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element14" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element14_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3EActive%20Leads:%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element15" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_3-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element15_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BActiveLeads%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element16" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element16_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3EConverted%20Leads:%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element17" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_4-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element17_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BConvertedLeads%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element18" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element18_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3ELead%20Conversion%20Rate%20(%25):%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element19" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_3-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element19_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BLeadConversionRate%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <omnistudio-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12"  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-bottom_x-small" style="">
+          <div data-style-id="state0element0" class="slds-col   slds-p-around_x-small  slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-small-size_12-of-12 slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}' >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="Scorecard"  collapsible="false"  collapsed-by-default="false"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_12-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-heading_medium%20slds-text-color_default%22%3EPartnership%20Score%20Details:%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1" class="slds-col   slds-p-around_x-small  slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-small-size_12-of-12 slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}' >
+    <omnistudio-block data-style-id="state0element0block_element1_child"  card={card}  record={record}  label="Scorecard"  collapsible="false"  collapsed-by-default="false"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element0" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3ECurrent%20Year%20Target:%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element1" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_4-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element1_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BCurrentYrTarget%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element2" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element2_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3EYTD%20Revenue%20Generated:%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element3" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_3-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element3_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BRevGenerated%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element4" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element4_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3EOpen%20Opportunities:%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element5" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_4-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element5_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BOpenOpps%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element6" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element6_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3EValue%20of%20Open%20Opps:%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element7" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_3-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element7_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BOpenOppValue%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element8" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element8_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3EOpp%20Win%20Rate%20(%25):%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element9" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_4-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element9_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BOppWinRate%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element10" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element10_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3E%25%20Goal%20Attainment%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element11" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_3-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element11_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BGoalAttainment%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element12" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element12_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3EClosed%20Won%20Opportunities:%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element13" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_4-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element13_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BClosedWonOpps%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element14" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element14_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3EActive%20Leads:%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element15" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_3-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element15_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BActiveLeads%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element16" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element16_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3EConverted%20Leads:%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element17" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_4-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element17_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BConvertedLeads%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element18" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_2-of-12  slds-medium-size_4-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+        color:#5C5C5C; " ><omnistudio-output-field data-style-id="state0element0block_element1block_element18_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-color_success%22%3ELead%20Conversion%20Rate%20(%25):%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element19" class="slds-col  slds-p-bottom_xxx-small  slds-large-size_3-of-12  slds-medium-size_8-of-12  slds-small-size_6-of-12  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element19_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%7BLeadConversionRate%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <omnistudio-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </omnistudio-action>
+  
+            <omnistudio-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </omnistudio-action>
+            </div>
+          </template>
